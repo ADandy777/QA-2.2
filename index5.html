@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .critical{
+            color:red;
+            font-size:large;
+            font-weight:600;
+            background-color:antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div id="multi"></div>
+    <script>
+        const multi = document.getElementById("multi");
+        const table = document.createElement("Table");
+        multi.appendChild(table);  // <table></table>
+        for (var i = 1; i < 10; i++) {
+            const tr = document.createElement("tr");
+            table.appendChild(tr);;
+            multi.appendChild(table);   // <table><tr></tr></table>
+            for (var j = 1; j < 10; j++) {
+                const td = document.createElement("td");
+                tr.appendChild(td); // <table><tr><td></td>1</tr></table>
+                td.innerText = i * j;
+            }
+        }
+        document.querySelectorAll("td").forEach(td => {
+            if (td.innerText > 50)
+                td.classList.add("critical");
+        })
+    </script>
+</body>
+</html>

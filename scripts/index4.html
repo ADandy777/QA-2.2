@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+    <style>
+        .tableColumn { 
+            width: 3em; 
+            float: left; 
+            border: 1px solid black; 
+            text-align: center;
+        }
+        .tableRow { 
+            clear: left; 
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function multiplicationTable(maxRows, maxColumns) {
+            var table = "<div>";
+
+            for (var row = 1; row <= maxRows; row++) {
+                table += "<div class='tableRow'>";
+                for (var column = 1; column <= maxColumns; column++) {
+                    table += "<div class='tableColumn'>" + (row * column) + "</div>";
+                }
+                table += "</div>";
+            }
+
+            table += "</div>";
+            document.write(table);
+        }
+
+        multiplicationTable(5, 5);
+        multiplicationTable(12, 12);    
+    </script>
+</body>
+</html>
+

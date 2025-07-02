@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function save() {
+            let yes = confirm('Save it?');
 
-<form
-action="http://qa.somee.com/moreDetails.aspx"; method="post">
-        name:<input type="text" name="Name" />
-        email:<input type="email"  name="Email" />
-        <input type-"radio" name="drink" value "t" checked>Tea 
-        <input type-"radio" name="drink" value "c" checked>Coffee
-        <input type-"radio" name="drink" value "s" checked>soup<br />
-        <input type-"checkbox" name="milk" value "y" checked>milk
-        <input type-"checkbox" name="sugar" value "y" checked>sugar<br />
+            let userMessage = (yes) ? 'Your Work has been saved' :
+                                         'Your work has not been saved, please save work or risk losing your work.';
+            display(userMessage);
+        }
 
-        <input type="submit" value="vend"/>
-    </form>
+        function display(message) {
+            document.getElementById('message').innerHTML = `<h2>${message}</h2>`;
+        }
 
+
+    </script>
+</head>
 <body>
-
-</body>S
-
+    <button onclick="save()">💾 Save</button>
+    <p id="message"></p>
+</body>
 </html>

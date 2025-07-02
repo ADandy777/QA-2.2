@@ -19,3 +19,19 @@ for (let row = 1; row < 11; row++) {
 
 table += "</div>"
 document.write(table);
+
+let odds = [1, 3, 5, 7];
+        odds.push(9);
+        for (var i = 0; i < odds.length; i++) {
+            console.log(odds[i]);
+        }
+
+        odds.forEach(n => console.log(n));
+        odds.forEach(n => {
+            console.log("----------");
+            console.log(n);
+        });
+
+        for (let n of odds) {
+            console.log(n)
+        }

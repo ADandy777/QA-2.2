@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show() {
+            document.getElementById('myInfo').style.display = 'block';
+        }
+
+        function hide() {
+            document.getElementById('myInfo').style.display = 'none';
+        }
+    </script>
+</head>
+<body> 
+    <div id="myInfo">
+        <h1>My Information</h1>
+        <p>Name: Alexander Dandy</p>
+        <p>Age: 24</p>
+        <p>Occupation: Software Developer</p>
+    </div>
+    <button onclick="show()">Show</button>
+    <button onclick="hide()">Hide</button>
+    <body onload="document.getElementById('myInfo').style.backgroundColor = 'red';">
+    <noscript>
+    <p>JavaScript is disabled in your browser. Please enable it for this site to work correctly.</p>
+</noscript>
+</body>
+</html>
