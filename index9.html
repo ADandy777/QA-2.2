@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script>
+            function demo() {
+                for (var i = 1; i <= 10; i++) {
+                    let li = $(`<li>Option-${i}</li>`);
+                    let line = $(`<li>-------------</li>`);
+                    let theList = $("#items");
+                    li.appendTo(theList);
+                    line.appendTo(theList);
+                }
+            }
+        </script>
+</head>
+<body>
+    <ol id="items"></ol>
+    
+    <button onclick="demo()">Dyno DOM</button>
+
+</body>
+</html>

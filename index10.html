@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>QA</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        function addName() {
+            let username = $("#username").val();
+            $(`<li>${username}</li>`).appendTo($("#names"));
+        }
+    </script>
+
+</head>
+<body>
+    Name:<input type="text" id="username" />
+    <button onclick="addName()">add</button>
+    <ol id="names">
+    </ol>
+
+</body>
+</html>
