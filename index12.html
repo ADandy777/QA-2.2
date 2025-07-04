@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope) {
+            $scope.message1 = "Hello Star Wars Fans!";
+            $scope.message2 = "Here are my ratings for the Star Wars movies";
+                
+            $scope.movies = [
+                { name: "A New Hope", releaseDate: 1977, rating: "9/10" },
+                { name: "The Empire Strikes Back", releaseDate: 1980, rating: "10/10" },
+                { name: "Return of the Jedi", releaseDate: 1983, rating: "10/10" },
+                { name: "The Phantom Menace", releaseDate: 1999, rating: "7/10" },
+                { name: "Attack of the Clones", releaseDate: 2002, rating: "8.5/10" },
+                { name: "Revenge of the Sith", releaseDate: 2005, rating: "10/10" },
+                { name: "The Force Awakens", releaseDate: 2015, rating: "8/10" },
+                { name: "Rogue One", releaseDate: 2016, rating: "9/10" },
+                { name: "The Last Jedi", releaseDate: 2017, rating: "4/10" },
+                { name: "Solo", releaseDate: 2018, rating: "7/10" },
+                { name: "The Rise of Skywalker", releaseDate: 2019, rating: "5/10" }
+            ];
+        };
+        myModule.controller("myController", myController);
+    </script>
+</head>
+
+
+<body ng-app="myModule" ng-controller="myController">
+    <h1>{{ message1 }}</h1>
+    <h2>{{ message2 }}</h2>
+ 
+    <table border="1">
+        <tr>
+            <th>Movie Name</th>
+            <th>Release Date</th>
+            <th>Rating</th>
+        </tr>
+        <tr ng-repeat="movie in movies">
+            <td>{{ movie.name }}</td>
+            <td>{{ movie.releaseDate }}</td>
+            <td>{{ movie.rating }}</td>
+        </tr>
+
+    <h3>Movies List</h3>
+    <div>{{ students[0].name }}</div>
+    <div>{{ students[1].name }}</div>
+    <div>{{ students[2].name }}</div>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script>
+        angular.module('myModule', [])
+            .controller('myController', function ($scope) {
+                $scope.message = "Hello";
+
+                $scope.students = [
+                    { name: "Alexander Dandy", days: 2, course: "Elden Ring" },
+                    { name: "Robert Harrison", days: 5, course: "Pokemon" },
+                    { name: "Eoin Davies", days: 20, course: "World of Tanks" }
+                ];
+
+                $scope.doClick = function(stu){
+                    $scope.studentName = stu.name;
+                }
+            });
+    </script>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <h1>{{message}}</h1>
+        <table>
+            <tr ng-repeat="stu in students" ng-mousemove="doClick(stu)">
+                <td>{{stu.name}}</td>
+                <td>{{stu.course}}</td>
+            </tr>
+        </table>
+        
+        <h2>{{studentName}}</h2>
+</body>
+</html>
